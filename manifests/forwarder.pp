@@ -1,7 +1,5 @@
 class log::forwarder {
 
-	anchor { 'log::forwarder::begin': } ->
-
 	if $cond_agentfqdn != '' {
 		$host = $cond_agentfqdn
 	} elsif $cond_masterfqdn != '' {
@@ -9,6 +7,8 @@ class log::forwarder {
 	} else {
 		$host = $::fqdn
 	}
+
+	anchor { 'log::forwarder::begin': } ->
 
 	class { 'beaver':
 		hostname => $host,
