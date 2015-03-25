@@ -1,9 +1,9 @@
 class log::forwarder {
 
-	if $::cond_agentfqdn != '' {
-		$host = $::cond_agentfqdn
-	} elsif $::cond_masterfqdn != '' {
-		$host = $::cond_masterfqdn
+	if $::agentfqdn != '' {
+		$host = $::agentfqdn
+	} elsif $::masterfqdn != '' {
+		$host = $::masterfqdn
 	} else {
 		$host = $::fqdn
 	}
