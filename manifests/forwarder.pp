@@ -9,7 +9,7 @@ class log::forwarder {
 	}  
 
 	beaver::output::redis { 'redis_out':
-		host => hiera('beaver::redis::host', 'localhost'),
+		host => hiera('log::broker', 'localhost'),
 	}
 
 }
