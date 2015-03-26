@@ -8,10 +8,19 @@ class log::forwarder {
 		$host = $::fqdn
 	}
 
+	$broker_host = hiera('log::broker', '')
+
+	if $broker_host != '' {
+		$status = 'enabled'
+	} else {
+		$status = 'disabled'
+	}
+
 	anchor { 'log::forwarder::begin': } ->
 
 	class { 'beaver':
 		hostname => $host,
+		status => $status,
 	} ->
 
 	file_fragment { 'logstash_version_fragment' :
