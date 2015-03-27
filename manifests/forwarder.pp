@@ -2,8 +2,6 @@ class log::forwarder {
 
 	if $::agentfqdn != '' {
 		$host = $::agentfqdn
-	} elsif $::masterfqdn != '' {
-		$host = $::masterfqdn
 	} else {
 		$host = $::fqdn
 	}
