@@ -11,7 +11,7 @@ class log::system {
 	include collectd::plugin::cpufreq
 
 	class { 'collectd::plugin::df':
-		mountpoints    => ['/'],
+		fstypes        => ['ext4'],
 	}
 
 	include collectd::plugin::disk
