@@ -11,9 +11,7 @@ class log::system {
 	include collectd::plugin::cpufreq
 
 	class { 'collectd::plugin::df':
-		mountpoints    => ['/u'],
-		fstypes        => ['nfs','tmpfs','autofs','gpfs','proc','devpts'],
-		ignoreselected => true,
+		mountpoints    => ['/'],
 	}
 
 	include collectd::plugin::disk
