@@ -14,7 +14,7 @@ mod "pdxcat/collectd", "3.2.0"
 # dep: ispavailability/beaver
 # dep: pdxcat/collectd
 mod "weyforth/log",
-	git: "https://weyforth@bitbucket.org/weyforth/puppet-log.git",
+	git: "https://github.com/weyforth/puppet-log.git",
 	ref: "master"
 ```
 
